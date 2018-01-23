@@ -1,0 +1,8 @@
+{
+  "name": "eager-life",
+  "app_id": "4017b207",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
