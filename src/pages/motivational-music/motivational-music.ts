@@ -3,10 +3,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: 'page-motivational-music',
+  templateUrl: 'motivational-music.html',
 })
-export class HomePage {
+export class MotivationalMusicPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

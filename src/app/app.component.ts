@@ -1,44 +1,117 @@
-import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { Component, ViewChild } from "@angular/core";
+import { Nav, Platform } from "ionic-angular";
+import { StatusBar } from "@ionic-native/status-bar";
+import { SplashScreen } from "@ionic-native/splash-screen";
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: "app.html"
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = "HomePage";
 
-  pages: Array<{title: string, component: any}>;
+  dailyPages: Array<{ title: string; pageName: string; icon: string }>;
+  weeklyPages: Array<{ title: string; pageName: string; icon: string }>;
+  otherPages: Array<{ title: string; pageName: string; icon: string }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen
+  ) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+    this.dailyPages = [
+      {
+        title: "Home",
+        pageName: "HomePage",
+        icon: "home"
+      },
+
+      // Daily Content
+      {
+        title: "Daily Calm",
+        pageName: "DailyCalmPage",
+        icon: "glass"
+      },
+      {
+        title: "Daily Motivation",
+        pageName: "DailyMotivationPage",
+        icon: "fire"
+      },
+      {
+        title: "Quote of the Day",
+        pageName: "QuoteOfTheDayPage",
+        icon: "quote-left"
+      },
+      {
+        title: "Vision Board",
+        pageName: "VisionBoardPage",
+        icon: "magic"
+      }
     ];
 
+    this.weeklyPages = [
+      {
+        title: "Motivating Music",
+        pageName: "MotivationalMusicPage",
+        icon: "music"
+      },
+      {
+        title: "Word of the Week",
+        pageName: "WordOfTheWeekPage",
+        icon: "newspaper-o"
+      },
+      {
+        title: "Fulfilling Film",
+        pageName: "FulfillingFilmPage",
+        icon: "film"
+      },
+      {
+        title: "The Week Ahead",
+        pageName: "TheWeekAheadPage",
+        icon: "calendar"
+      },
+      {
+        title: "Weekly Wind-down",
+        pageName: "WeekendWindDownPage",
+        icon: "trophy"
+      }
+    ];
+
+    this.otherPages = [
+      {
+        title: "Account",
+        pageName: "AccountPage",
+        icon: "id-card"
+      },
+      {
+        title: "Settings",
+        pageName: "SettingsPage",
+        icon: "cog"
+      },
+      {
+        title: "About",
+        pageName: "AboutPage",
+        icon: "info-circle"
+      },
+      {
+        title: "Admin",
+        pageName: "AdminPage",
+        icon: "cogs"
+      }
+    ];
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
   }
 
-  openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+  openPage(pageName) {
+    this.nav.setRoot(pageName);
   }
 }

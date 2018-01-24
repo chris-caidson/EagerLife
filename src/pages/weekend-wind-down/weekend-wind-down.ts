@@ -3,10 +3,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: 'page-weekend-wind-down',
+  templateUrl: 'weekend-wind-down.html',
 })
-export class HomePage {
+export class WeekendWindDownPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

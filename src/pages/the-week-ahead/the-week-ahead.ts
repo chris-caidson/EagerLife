@@ -3,10 +3,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: 'page-the-week-ahead',
+  templateUrl: 'the-week-ahead.html',
 })
-export class HomePage {
+export class TheWeekAheadPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
